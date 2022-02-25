@@ -49,7 +49,10 @@ go_module(
     name = "protoc-gen-go",
     binary = True,
     download = ":protobuf_download",
-    install = ["cmd/protoc-gen-go"],
+    install = [
+        "cmd/protoc-gen-go/.",
+        ".",
+    ],
     module = "google.golang.org/protobuf",
     visibility = ["PUBLIC"],
     deps = [":protobuf"],

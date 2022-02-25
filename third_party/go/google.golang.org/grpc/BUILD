@@ -1,5 +1,15 @@
+go_mod_download(
+    name = "grpc_download",
+    module = "google.golang.org/grpc",
+    version = "v1.44.0",
+    visibility = ["PUBLIC"],
+    deps = [
+    ],
+)
+
 go_module(
     name = "grpc",
+    download = ":grpc_download",
     install = [
         ".",
         "attributes",
@@ -48,7 +58,6 @@ go_module(
         "tap",
     ],
     module = "google.golang.org/grpc",
-    version = "v1.44.0",
     visibility = ["PUBLIC"],
     deps = [
         "//third_party/go/github.com/golang/protobuf",
@@ -57,4 +66,16 @@ go_module(
         "//third_party/go/google.golang.org/genproto",
         "//third_party/go/google.golang.org/protobuf",
     ],
+)
+
+go_module(
+    name = "protoc-gen-go-grpc",
+    binary = True,
+    download = ":grpc_download",
+    install = [
+        "cmd/protoc-gen-go-grpc",
+    ],
+    module = "google.golang.org/grpc",
+    visibility = ["PUBLIC"],
+    deps = [":grpc"],
 )
