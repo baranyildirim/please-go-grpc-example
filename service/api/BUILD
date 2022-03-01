@@ -8,3 +8,13 @@ grpc_library(
     deps = [
     ],
 )
+
+proto_library(
+    name = "rpc",
+    srcs = ["example.proto"],
+    languages = [
+        "go",
+    ],
+    visibility = ["PUBLIC"],
+    deps = [":proto"],
+)

@@ -1,6 +1,8 @@
 syntax = "proto3";
 
+
 option go_package = "github.com/baranyildirim/please-go-grpc-example/service/api";
+package service.api;
 
 // The request message containing the user's name.
 message HelloRequest {
