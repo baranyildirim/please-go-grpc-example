@@ -6,6 +6,6 @@ go_module(
     visibility = ["PUBLIC"],
     deps = [
         "//third_party/go/github.com/golang/protobuf",
-        "//third_party/go/google.golang.org/protobuf",
+        "//third_party/go/google.golang.org/protobuf:google.golang.org.protobuf",
     ],
 )

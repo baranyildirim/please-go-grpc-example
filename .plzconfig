@@ -10,7 +10,7 @@
 
 [go]
 GoTool = //tools:go_toolchain|go
-importpath = github.com/baranyildirim/please-go-grpc-example
+ImportPath = github.com/baranyildirim/please-go-grpc-example
 
 
 [buildconfig]
@@ -22,7 +22,7 @@ GoGrpcDep = //third_party/go/google.golang.org/grpc:grpc
 GrpcGoPlugin = //third_party/go/google.golang.org/grpc:protoc-gen-go-grpc
 ProtocGoPlugin = //third_party/go/google.golang.org/protobuf:protoc-gen-go
 ProtocTool = //third_party/proto:protoc
-GoDep = //third_party/go/google.golang.org/protobuf:protobuf
+GoDep = //third_party/go/github.com/golang/protobuf
 
 
 [alias "go-deps"]

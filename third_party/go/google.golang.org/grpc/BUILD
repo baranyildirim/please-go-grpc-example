@@ -64,18 +64,16 @@ go_module(
         "//third_party/go/golang.org/x/net",
         "//third_party/go/golang.org/x/sys",
         "//third_party/go/google.golang.org/genproto",
-        "//third_party/go/google.golang.org/protobuf",
+        "//third_party/go/google.golang.org/protobuf:google.golang.org.protobuf",
     ],
 )
 
 go_module(
     name = "protoc-gen-go-grpc",
     binary = True,
-    download = ":grpc_download",
-    install = [
-        "cmd/protoc-gen-go-grpc",
-    ],
-    module = "google.golang.org/grpc",
+    module = "google.golang.org/grpc/cmd/protoc-gen-go-grpc",
+    version = "v1.1.0",
     visibility = ["PUBLIC"],
-    deps = [":grpc"],
+    deps = ["//third_party/go/google.golang.org/protobuf:google.golang.org.protobuf"],
 )
+
